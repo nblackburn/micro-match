@@ -1,0 +1,14 @@
+{
+    "env": {
+        "node": true
+    },
+
+    "rules": {
+        "indent": ["error", 4],
+        "space-in-parens": ["error", "never"]
+    },
+
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}

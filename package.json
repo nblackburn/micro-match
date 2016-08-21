@@ -1,0 +1,9 @@
+{
+	"name": "micro-match",
+	"description": "A simple url matching utility for micro.",
+	"version": "0.1.0",
+	"main": "source/index.js",
+	"devDependencies": {
+		"ava": "^0.16.0"
+	}
+}

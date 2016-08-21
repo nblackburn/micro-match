@@ -1,7 +1,7 @@
 {
     "name": "micro-match",
     "description": "A simple url matching utility for micro.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "source/index.js",
     "repository": {
         "type": "git",

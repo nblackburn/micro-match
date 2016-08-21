@@ -37,8 +37,8 @@ Details for each release are documented in the [release notes](CHANGELOG.md).
 
 ## Donations
 
-If you found this wrapper to be useful, please consider [donating](https://paypal.me/nblackburn).
+If you found this utility to be useful, please consider [donating](https://paypal.me/nblackburn).
 
 ## License
 
-This wrapper is licensed under [MIT](http://opensource.org/licenses/mit), see [LICENSE.md](LICENSE.md) for details.
+This utility is licensed under [MIT](http://opensource.org/licenses/mit), see [LICENSE.md](LICENSE.md) for details.

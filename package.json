@@ -3,6 +3,12 @@
 	"description": "A simple url matching utility for micro.",
 	"version": "0.1.0",
 	"main": "source/index.js",
+    "keywords": [
+        "url",
+        "micro",
+        "match",
+        "utility"
+    ],
 	"devDependencies": {
 		"ava": "^0.16.0"
 	}

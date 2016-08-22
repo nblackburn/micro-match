@@ -56,8 +56,8 @@ const buildExpression = (pattern) => {
 */
 const zipObject = (keys, values) => {
 
-    keys = (keys) ? keys : [];
-    values = (values) ? values : [];
+    keys = keys || [];
+    values = values || [];
 
     let zipped = {};
 

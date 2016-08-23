@@ -3,6 +3,9 @@
     "description": "A simple url matching utility for micro.",
     "version": "0.1.1",
     "main": "source/index.js",
+    "scripts": {
+        "test": "ava test --verbose"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/nblackburn/micro-match.git"

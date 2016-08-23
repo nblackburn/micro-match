@@ -9,15 +9,30 @@
 */
 const getTokens = (pattern) => {
 
-    let expression = /([^\/\?]+)(?=\:)/g;
-    let reversed = reverseString(pattern);
-    let matches = reversed.match(expression);
+    let expression = /\:([^\/\\\?]+)/g;
+    let matches = getMatches(expression, pattern);
 
-    for(let index = 0; index < matches.length; index++) {
-        matches[index] = reverseString(matches[index]);
+    return matches;
+};
+
+/**
+ * Get matches from a regular expression.
+ * 
+ * @param  {regexp} expression
+ * @param  {string} pattern
+ * 
+ * @return {array}
+ */
+const getMatches = (expression, pattern) => {
+
+    let match;
+    let matches = [];
+
+    while((match = expression.exec(pattern)) !== null) {
+        matches.push(match[1]);
     }
 
-    return matches.reverse();
+    return matches;
 };
 
 /**

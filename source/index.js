@@ -21,14 +21,19 @@ const getTokens = (pattern) => {
 };
 
 /**
-* Reverse a string.
-* 
-* @param {string} string
-* 
-* @return {string}
-*/
-const reverseString = (string) => {
-    return string.split('').reverse().join('');
+ * Escape special characters from a regular expression.
+ * 
+ * @param  {string} pattern
+ * 
+ * @return {string}
+ */
+const escapeExpression = (pattern) => {
+
+    if (typeof pattern !== 'string') {
+        throw new Error('pattern must of type string.');
+    }
+
+    return pattern.replace(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 };
 
 /**
@@ -87,6 +92,9 @@ const zipObject = (keys, values) => {
 * @return {object}
 */
 const match = (pattern, url) => {
+
+    // Escape any special characters.
+    pattern = escapeExpression(pattern);
 
     let tokens = getTokens(pattern);
     let expression = buildExpression(pattern);

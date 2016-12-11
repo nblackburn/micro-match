@@ -42,3 +42,8 @@ If you found this utility to be useful, please consider [donating](https://paypa
 ## License
 
 This utility is licensed under [MIT](http://opensource.org/licenses/mit), see [LICENSE.md](LICENSE.md) for details.
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/nblackburn/micro-match/badge.svg?style=beer-square)](https://beerpay.io/nblackburn/micro-match)  [![Beerpay](https://beerpay.io/nblackburn/micro-match/make-wish.svg?style=flat-square)](https://beerpay.io/nblackburn/micro-match?focus=wish)

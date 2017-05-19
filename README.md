@@ -35,15 +35,6 @@ Now you will be able to access the `id` parameter with the value of `1` and hand
 
 Details for each release are documented in the [release notes](CHANGELOG.md).
 
-## Donations
-
-If you found this utility to be useful, please consider [donating](https://paypal.me/nblackburn).
-
 ## License
 
 This utility is licensed under [MIT](http://opensource.org/licenses/mit), see [LICENSE.md](LICENSE.md) for details.
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/nblackburn/micro-match/badge.svg?style=beer-square)](https://beerpay.io/nblackburn/micro-match)  [![Beerpay](https://beerpay.io/nblackburn/micro-match/make-wish.svg?style=flat-square)](https://beerpay.io/nblackburn/micro-match?focus=wish)

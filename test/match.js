@@ -1,49 +1,47 @@
-const test = require('ava');
 const match = require('../source/index');
 
-test('get required parameter', t => {
+describe('match', () => {
+    test('get required parameter', () => {
+        const route = '/api/v1/users/1';
+        const { id } = match('/api/:version?/users/:id', route);
 
-    const route = '/api/v1/users/1';
-    const {version, id} = match('/api/:version?/users/:id', route);
+        expect(id).toBe('1');
+    });
 
-    t.true(id === '1');
-});
+    test('get optional parameter', () => {
+        const route = '/api/v1/users/1';
+        const { version } = match('/api/:version?/users/:id', route);
 
-test('get optional parameter', t => {
+        expect(version).toBe('v1');
+    });
 
-    const route = '/api/v1/users/1';
-    const {version, id} = match('/api/:version?/users/:id', route);
+    test('do not allow large urls', () => {
+        let route = '';
+        
+        for (let i = 0; i < 10001; i++) {
+            route += String(i % 10);
+        }
 
-    t.true(version === 'v1');
-});
+        let matcher = () => {
+            return match('/api/:version?/users/:id', route);
+        };
 
-test('do not allow large urls', t => {
+        expect(matcher).toThrow();
+    });
 
-    let route = '';
-    for (let i = 0; i < 10001; i++) {
-        route += String(i % 10)
-    }
-    try {
-        match('/api/:version?/users/:id', route);
-        t.fail('should throw error')
-    } catch (err) {
-        t.pass('guard against large url!');
-    }
+    test('allow large urls', () => {
+        let route = '';
 
-});
+        for (let i = 0; i < 10001; i++) {
+            route += String(i % 10);
+        }
 
+        let matcher = jest.fn(() => {
+            return match('/api/:version?/users/:id', route, true);
+        });
 
-test('allow large urls', t => {
+        matcher();
 
-    let route = '';
-    for (let i = 0; i < 10001; i++) {
-        route += String(i % 10)
-    }
-    try {
-        match('/api/:version?/users/:id', route, true);
-        t.pass('should not throw error')
-    } catch (err) {
-        t.fail('do not guard against large url');
-    }
-
+        expect(matcher).toHaveReturned();
+    });
 });

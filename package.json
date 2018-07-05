@@ -4,7 +4,8 @@
     "version": "0.1.2",
     "main": "source/index.js",
     "scripts": {
-        "test": "ava test --verbose"
+        "test": "./node_modules/.bin/jest",
+        "coverage": "./node_modules/.bin/jest --coverage"
     },
     "repository": {
         "type": "git",
@@ -17,6 +18,15 @@
         "utility"
     ],
     "devDependencies": {
-        "ava": "^0.25.0"
+        "jest": "^23.3.0"
+    },
+    "jest": {
+        "verbose": true,
+        "testEnvironment": "node",
+        "testRegex": "test/(.*).js$",
+        "testPathIgnorePatterns": [
+            "/test/fixtures/",
+            "/node_modules/"
+        ]
     }
 }

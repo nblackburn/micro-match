@@ -1,7 +1,3 @@
-# Files
-
 npm-debug.log
-
-# Folders
-
+coverage/
 node_modules/

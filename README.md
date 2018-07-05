@@ -2,8 +2,6 @@
 
 A simple url matching utility for micro.
 
-[![bitHound Overall Score](https://www.bithound.io/github/nblackburn/micro-match/badges/score.svg)](https://www.bithound.io/github/nblackburn/micro-match)
-
 ## Installation
 
 To install micro match, simply run the following command in your terminal of choice.

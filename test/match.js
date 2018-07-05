@@ -29,6 +29,16 @@ describe('match', () => {
         expect(matcher).toThrow();
     });
 
+    test('throws for non-strings', () => {
+        let route = '';
+        
+        let matcher = () => {
+            return match(0, route);
+        };
+
+        expect(matcher).toThrow();
+    });
+
     test('allow large urls', () => {
         let route = '';
 

@@ -8,7 +8,6 @@
 * @return {array}
 */
 const getTokens = (pattern) => {
-
     let expression = /\:([^\/\\\?]+)/g;
     let matches = getMatches(expression, pattern);
 
@@ -24,7 +23,6 @@ const getTokens = (pattern) => {
  * @return {array}
  */
 const getMatches = (expression, pattern) => {
-
     let match;
     let matches = [];
 
@@ -43,7 +41,6 @@ const getMatches = (expression, pattern) => {
  * @return {string}
  */
 const escapeExpression = (pattern) => {
-
     if (typeof pattern !== 'string') {
         throw new Error('pattern must of type string.');
     }
@@ -59,7 +56,6 @@ const escapeExpression = (pattern) => {
 * @return {regexp}
 */
 const buildExpression = (pattern) => {
-
     let expression = pattern.replace(/\/:[^\/\?]+\?/g, '(?:\/)?([^\/]+)?')
                             .replace(/\:[^\/]+/g, '([^\/]+)');
 
@@ -75,7 +71,6 @@ const buildExpression = (pattern) => {
 * @return {object}
 */
 const zipObject = (keys, values) => {
-
     keys = keys || [];
     values = values || [];
 

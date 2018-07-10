@@ -104,7 +104,9 @@ const zipObject = (keys, values) => {
 */
 const match = (pattern, url, unsafe) => {
     // Avoid ReDoS, see example: https://goo.gl/RxSRXD
-    if (url.length > 10000 && unsafe !== true) throw new Error('URL too large, aborting!')
+    if (url.length > 10000 && unsafe !== true) {
+        throw new Error('URL too large, aborting!');
+    }
 
     // Escape any special characters.
     pattern = escapeExpression(pattern);

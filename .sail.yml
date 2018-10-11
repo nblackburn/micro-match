@@ -1,4 +1,10 @@
 tasks:
+  build:
+    image: node:carbon
+    command:
+      - npm
+    args:
+      - install
   lint:
     image: node:carbon
     command:

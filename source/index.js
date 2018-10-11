@@ -57,7 +57,7 @@ const escapeExpression = (pattern) => {
 */
 const buildExpression = (pattern) => {
     let expression = pattern.replace(/\/:[^\/\?]+\?/g, '(?:\/)?([^\/]+)?')
-                            .replace(/\:[^\/]+/g, '([^\/]+)');
+        .replace(/\:[^\/]+/g, '([^\/]+)');
 
     return new RegExp(`^${expression}$`);
 };

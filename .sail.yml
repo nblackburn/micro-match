@@ -1,0 +1,13 @@
+tasks:
+  lint:
+    image: node:carbon
+    command:
+      - npm
+    args:
+      - lint
+  test:
+    image: node:carbon
+    command:
+      - npm
+    args:
+      - test

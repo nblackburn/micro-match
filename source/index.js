@@ -1,14 +1,14 @@
 'use strict';
 
 /**
-* Get the tokens.
-*
-* @param {string} pattern
-*
-* @return {array}
-*/
-const getTokens = (pattern) => {
-    let expression = /\:([^\/\\\?]+)/g;
+ * Get the tokens.
+ *
+ * @param {string} pattern
+ *
+ * @return {array}
+ */
+const getTokens = pattern => {
+    let expression = /:([^/\\?]+)/g;
     let matches = getMatches(expression, pattern);
 
     return matches;
@@ -26,7 +26,7 @@ const getMatches = (expression, pattern) => {
     let match;
     let matches = [];
 
-    while((match = expression.exec(pattern)) !== null) {
+    while ((match = expression.exec(pattern)) !== null) {
         matches.push(match[1]);
     }
 
@@ -40,7 +40,7 @@ const getMatches = (expression, pattern) => {
  *
  * @return {string}
  */
-const escapeExpression = (pattern) => {
+const escapeExpression = pattern => {
     if (typeof pattern !== 'string') {
         throw new Error('pattern must of type string.');
     }
@@ -49,27 +49,28 @@ const escapeExpression = (pattern) => {
 };
 
 /**
-* Build the regular expression needed to match the pattern.
-*
-* @param {string} pattern
-*
-* @return {regexp}
-*/
-const buildExpression = (pattern) => {
-    let expression = pattern.replace(/\/:[^\/\?]+\?/g, '(?:\/)?([^\/]+)?')
-        .replace(/\:[^\/]+/g, '([^\/]+)');
+ * Build the regular expression needed to match the pattern.
+ *
+ * @param {string} pattern
+ *
+ * @return {regexp}
+ */
+const buildExpression = pattern => {
+    let expression = pattern
+        .replace(/:[^/?]+\?/g, '(?:/)?([^/]+)?')
+        .replace(/:[^/]+/g, '([^/]+)');
 
     return new RegExp(`^${expression}$`);
 };
 
 /**
-* Take a key and value array and convert them into key/value pairs.
-*
-* @param {array} keys
-* @param {array} values
-*
-* @return {object}
-*/
+ * Take a key and value array and convert them into key/value pairs.
+ *
+ * @param {array} keys
+ * @param {array} values
+ *
+ * @return {object}
+ */
 const zipObject = (keys, values) => {
     keys = keys || [];
     values = values || [];
@@ -78,13 +79,11 @@ const zipObject = (keys, values) => {
 
     // Ensure keys and values are of equal length.
     if (keys.length !== values.length) {
-
         keys = keys.slice(0, values.length);
         values = values.slice(0, keys.length);
     }
 
-    for(let index = 0; index < keys.length; index++) {
-
+    for (let index = 0; index < keys.length; index++) {
         if (keys[index] && values[index]) {
             zipped[keys[index]] = values[index];
         }
@@ -94,14 +93,14 @@ const zipObject = (keys, values) => {
 };
 
 /**
-* Match the route bindings from a url.
-*
-* @param {string} pattern
-* @param {string} url
-* @param {?boolean} unsafe
-*
-* @return {object}
-*/
+ * Match the route bindings from a url.
+ *
+ * @param {string} pattern
+ * @param {string} url
+ * @param {?boolean} unsafe
+ *
+ * @return {object}
+ */
 const match = (pattern, url, unsafe) => {
     // Avoid ReDoS, see example: https://goo.gl/RxSRXD
     if (url.length > 10000 && unsafe !== true) {

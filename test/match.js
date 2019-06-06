@@ -1,4 +1,4 @@
-const match = require('../source/index');
+const { match } = require('../source/index');
 
 describe('match', () => {
     test('get required parameter', () => {
@@ -17,7 +17,7 @@ describe('match', () => {
 
     test('do not allow large urls', () => {
         let route = '';
-        
+
         for (let i = 0; i < 10001; i++) {
             route += String(i % 10);
         }
@@ -31,7 +31,7 @@ describe('match', () => {
 
     test('throws for non-strings', () => {
         let route = '';
-        
+
         let matcher = () => {
             return match(0, route);
         };

@@ -121,4 +121,21 @@ const match = (pattern, url, unsafe) => {
     return zipObject(tokens, matches);
 };
 
-module.exports = match;
+/**
+ * Test a url matches the given pattern.
+ *
+ * @param {string} pattern
+ * @param {string} url
+ *
+ * @return {boolean}
+ */
+const test = (pattern, url) => {
+    let expression = buildExpression(pattern);
+
+    return expression.test(url);
+};
+
+module.exports = {
+    test,
+    match,
+};

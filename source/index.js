@@ -1,9 +1,4 @@
-const {
-    zipObject,
-    getTokens,
-    buildExpression,
-    escapeExpression,
-} = require('./utilities');
+const { zipObject, getTokens, buildExpression } = require('./utilities');
 
 /**
  * Match the route bindings from a url.
@@ -19,9 +14,6 @@ const match = (pattern, url, unsafe) => {
     if (url.length > 10000 && unsafe !== true) {
         throw new Error('URL too large, aborting!');
     }
-
-    // Escape any special characters.
-    pattern = escapeExpression(pattern);
 
     let tokens = getTokens(pattern);
     let expression = buildExpression(pattern);

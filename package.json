@@ -4,10 +4,12 @@
     "version": "0.3.0",
     "main": "source/index.js",
     "scripts": {
-        "lint": "eslint source/**/* --fix",
-        "test": "./node_modules/.bin/jest",
-        "format": "prettier source/**/* --write",
-        "coverage": "./node_modules/.bin/jest --coverage"
+        "test": "jest",
+        "lint": "eslint source/**/*",
+        "coverage": "jest --coverage",
+        "lint:fix": "eslint source/**/* --fix",
+        "format": "prettier source/**/* --check",
+        "format:fix": "prettier source/**/* --write"
     },
     "repository": {
         "type": "git",
@@ -42,7 +44,7 @@
     "husky": {
         "hooks": {
             "pre-push": "npm run test",
-            "pre-commit": "npm run lint && npm run format"
+            "pre-commit": "npm run lint:fix && npm run format:fix"
         }
     }
 }

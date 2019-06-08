@@ -1,4 +1,4 @@
-const { match } = require('../source/index');
+const { match } = require('@/index');
 
 describe('match', () => {
     test('get required parameter', () => {

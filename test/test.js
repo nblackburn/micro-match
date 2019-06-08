@@ -1,4 +1,4 @@
-const { test: valid } = require('../source/index');
+const { test: valid } = require('@/index');
 
 describe('test', () => {
     test('test that a matching url returns true', () => {

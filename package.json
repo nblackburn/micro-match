@@ -34,7 +34,10 @@
         "testPathIgnorePatterns": [
             "/test/fixtures/",
             "/node_modules/"
-        ]
+        ],
+        "moduleNameMapper": {
+			"^@/(.*)$": "<rootDir>/source/$1"
+		}
     },
     "husky": {
         "hooks": {

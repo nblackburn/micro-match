@@ -38,8 +38,8 @@
             "/node_modules/"
         ],
         "moduleNameMapper": {
-			"^@/(.*)$": "<rootDir>/source/$1"
-		}
+            "^@/(.*)$": "<rootDir>/source/$1"
+        }
     },
     "husky": {
         "hooks": {

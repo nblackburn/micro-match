@@ -1,7 +1,7 @@
 {
     "name": "micro-match",
     "description": "A simple url matching utility for micro.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "source/index.js",
     "scripts": {
         "test": "jest",
@@ -38,8 +38,8 @@
             "/node_modules/"
         ],
         "moduleNameMapper": {
-			"^@/(.*)$": "<rootDir>/source/$1"
-		}
+            "^@/(.*)$": "<rootDir>/source/$1"
+        }
     },
     "husky": {
         "hooks": {

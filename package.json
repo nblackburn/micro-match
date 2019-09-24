@@ -22,12 +22,12 @@
         "utility"
     ],
     "devDependencies": {
-        "eslint": "^5.16.0",
-        "eslint-config-prettier": "^4.3.0",
-        "eslint-plugin-prettier": "^3.1.0",
-        "husky": "^2.4.0",
-        "jest": "^24.8.0",
-        "prettier": "^1.17.1"
+        "eslint": "^6.4.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "husky": "^3.0.5",
+        "jest": "^24.9.0",
+        "prettier": "^1.18.2"
     },
     "jest": {
         "verbose": true,

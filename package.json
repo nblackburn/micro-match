@@ -2,14 +2,14 @@
     "name": "micro-match",
     "description": "A simple url matching utility for micro.",
     "version": "1.0.1",
-    "main": "source/index.js",
+    "main": "src/index.js",
     "scripts": {
         "test": "jest",
-        "lint": "eslint source/**/*",
+        "lint": "eslint src/**/*",
         "coverage": "jest --coverage",
-        "lint:fix": "eslint source/**/* --fix",
-        "format": "prettier source/**/* --check",
-        "format:fix": "prettier source/**/* --write"
+        "lint:fix": "eslint src/**/* --fix",
+        "format": "prettier src/**/* --check",
+        "format:fix": "prettier src/**/* --write"
     },
     "repository": {
         "type": "git",
@@ -38,7 +38,7 @@
             "/node_modules/"
         ],
         "moduleNameMapper": {
-            "^@/(.*)$": "<rootDir>/source/$1"
+            "^@/(.*)$": "<rootDir>/src/$1"
         }
     },
     "husky": {

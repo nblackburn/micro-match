@@ -46,7 +46,3 @@ Details for each release are documented in the [release notes](CHANGELOG.md).
 ## License
 
 This utility is licensed under [MIT](http://opensource.org/licenses/mit), see [LICENSE.md](LICENSE.md) for details.
-
-## Donations
-
-[![](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://buymeacoffee.com/nblackburn)
